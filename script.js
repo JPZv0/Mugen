@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     container.addEventListener('mousedown', function(e) {
         console.log("Mouse down event triggered"); // Debugging line
 
-        const startX = e.clientX;
-        const startY = e.clientY;
+        // Adjusted to get the starting position relative to the container
+        const startX = e.clientX - container.getBoundingClientRect().left;
+        const startY = e.clientY - container.getBoundingClientRect().top;
 
         const box = document.createElement('textarea');
         box.classList.add('dynamic-box');
@@ -15,10 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(box);
 
         function onMouseMove(e) {
-            const currentX = e.clientX;
-            const currentY = e.clientY;
-            const width = currentX - startX;
-            const height = currentY - startY;
+            // Adjusted to get the current position relative to the container
+            const currentX = e.clientX - container.getBoundingClientRect().left;
+            const currentY = e.clientY - container.getBoundingClientRect().top;
+            const width = Math.max(currentX - startX, 0); // Ensure width is not negative
+            const height = Math.max(currentY - startY, 0); // Ensure height is not negative
             box.style.width = `${width}px`;
             box.style.height = `${height}px`;
         }
