@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('box-container');
 
     container.addEventListener('mousedown', function(e) {
+        console.log("Mouse down event triggered"); // Debugging line
+
         const startX = e.clientX;
         const startY = e.clientY;
 
