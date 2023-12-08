@@ -42,7 +42,9 @@ nav:after {
     nav ul li {
         float: none;
     }
-/* box container styling */
+}
+
+/* Box container styling */
 #box-container {
     position: relative;
     width: 100%;
@@ -50,10 +52,10 @@ nav:after {
     border: 1px solid #000;
 }
 
+/* Styling for dynamic boxes */
 .dynamic-box {
     position: absolute;
     border: 1px solid #555;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
+    background-color: black; /* Changed to black for visibility */
+    color: white; /* Text color changed to white for visibility */
 }
