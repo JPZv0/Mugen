@@ -42,4 +42,18 @@ nav:after {
     nav ul li {
         float: none;
     }
+/* box container styling */
+#box-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust as needed */
+    border: 1px solid #000;
+}
+
+.dynamic-box {
+    position: absolute;
+    border: 1px solid #555;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 }
