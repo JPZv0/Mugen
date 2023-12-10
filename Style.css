@@ -60,5 +60,25 @@ nav:after {
     border: 1px solid #555;
     background-color: black; /* Changed to black for visibility */
     color: white; /* Text color changed to white for visibility */
-} 
+}
+
+/* Floating Toolbar Styles */
+#floating-toolbar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures toolbar is above other elements */
+    cursor: move; /* Cursor indicates the toolbar is movable */
+}
+
+#floating-toolbar button {
+    margin: 5px;
+    padding: 5px 10px;
+}
+
 

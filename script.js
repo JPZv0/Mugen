@@ -31,4 +31,27 @@ document.addEventListener('DOMContentLoaded', function() {
             container.removeEventListener('mousemove', onMouseMove);
         }, { once: true });
     });
+
+    // Make the toolbar draggable
+    const toolbar = document.getElementById('floating-toolbar');
+    let isDragging = false;
+    let dragOffsetX, dragOffsetY;
+
+    toolbar.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        dragOffsetX = e.clientX - toolbar.getBoundingClientRect().left;
+        dragOffsetY = e.clientY - toolbar.getBoundingClientRect().top;
+        e.preventDefault(); // Prevents unwanted text selection
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+            toolbar.style.left = (e.clientX - dragOffsetX) + 'px';
+            toolbar.style.top = (e.clientY - dragOffsetY) + 'px';
+        }
+    });
+
+    document.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
 });
