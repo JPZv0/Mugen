@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Code for box creation and resizing
+    /* Code for box creation and resizing
     const container = document.getElementById('box-container');
 
     container.addEventListener('mousedown', function(e) {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             container.removeEventListener('mousemove', onMouseMove);
         }, { once: true });
     });
-
+*/
     // Code to make the toolbar draggable
     const toolbar = document.getElementById('floating-toolbar');
     let isDragging = false;
@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hotkey functionality
     function handleKeyPress(e) {
-        if (e.key === 'F1') {
+        if (e.key === 'p') {
             e.preventDefault();
-            console.log('F1 pressed');
+            console.log('p pressed');
         } else if (e.ctrlKey && e.key === 'b') {
             e.preventDefault();
             console.log('Ctrl+B pressed');
