@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Code for box creation and resizing
     const container = document.getElementById('box-container');
 
     container.addEventListener('mousedown', function(e) {
         console.log("Mouse down event triggered"); // Debugging line
 
-        // Adjusted to get the starting position relative to the container
         const startX = e.clientX - container.getBoundingClientRect().left;
         const startY = e.clientY - container.getBoundingClientRect().top;
 
@@ -16,23 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(box);
 
         function onMouseMove(e) {
-            // Adjusted to get the current position relative to the container
             const currentX = e.clientX - container.getBoundingClientRect().left;
             const currentY = e.clientY - container.getBoundingClientRect().top;
-            const width = Math.max(currentX - startX, 0); // Ensure width is not negative
-            const height = Math.max(currentY - startY, 0); // Ensure height is not negative
+            const width = Math.max(currentX - startX, 0);
+            const height = Math.max(currentY - startY, 0);
             box.style.width = `${width}px`;
             box.style.height = `${height}px`;
         }
 
         container.addEventListener('mousemove', onMouseMove);
-
         container.addEventListener('mouseup', function() {
             container.removeEventListener('mousemove', onMouseMove);
         }, { once: true });
     });
 
-    // Make the toolbar draggable
+    // Code to make the toolbar draggable
     const toolbar = document.getElementById('floating-toolbar');
     let isDragging = false;
     let dragOffsetX, dragOffsetY;
@@ -54,4 +52,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('mouseup', function() {
         isDragging = false;
     });
+
+    // Hotkey functionality
+    function handleKeyPress(e) {
+        if (e.key === 'F1') {
+            e.preventDefault();  // Prevent default F1 action
+            console.log('F1 pressed'); // Replace with actual functionality
+        } else if (e.ctrlKey && e.key === 'b') {
+            e.preventDefault();  // Prevent default Ctrl+B action
+            console.log('Ctrl+B pressed'); // Replace with actual functionality
+        }
+        // Add more hotkeys as needed
+    }
+
+    document.addEventListener('keydown', handleKeyPress);
 });
