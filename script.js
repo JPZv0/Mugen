@@ -79,19 +79,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return outcomes;
     }
+// Function to display the calculation outcomes and log them to the console
+function displayResults(outcomes) {
+    const resultsElement = document.createElement('div');
+    document.body.appendChild(resultsElement);
 
-    // Function to display the calculation outcomes
-    function displayResults(outcomes) {
-        const resultsElement = document.createElement('div');
-        document.body.appendChild(resultsElement);
+    outcomes.forEach(outcome => {
+        const resultText = `If stock price reaches $${outcome.futureStockPrice}, potential profit: $${outcome.potentialProfit.toFixed(2)}`;
 
-        outcomes.forEach(outcome => {
-            const resultText = `If stock price reaches $${outcome.futureStockPrice}, potential profit: $${outcome.potentialProfit.toFixed(2)}`;
-            const paragraph = document.createElement('p');
-            paragraph.textContent = resultText;
-            resultsElement.appendChild(paragraph);
-        });
-    }
+        // Create paragraph element for each outcome
+        const paragraph = document.createElement('p');
+        paragraph.textContent = resultText;
+        resultsElement.appendChild(paragraph);
+
+        // Log the result to the console
+        console.log(resultText);
+    });
+}
 
     // Handling form submission
     document.getElementById('optionCalcForm').addEventListener('submit', function(e) {
