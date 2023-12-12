@@ -28,19 +28,28 @@
         <!-- Add more buttons or functionality as needed -->
     </div>
 
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
+    <!-- Modal for displaying option outcomes -->
+    <div id="optionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal...</p>
+        </div>
     </div>
-</div>
 
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
-    </div>
-</div>
+    <!-- Form for option calculation inputs -->
+    <form id="optionCalcForm">
+        <input type="number" id="currentStockPrice" placeholder="Current Stock Price">
+        <input type="number" id="strikePrice" placeholder="Strike Price">
+        <input type="number" id="optionPremium" placeholder="Option Premium">
+        <input type="number" id="theta" placeholder="Theta">
+        <input type="number" id="daysUntilExpiration" placeholder="Days Until Expiration">
+        <input type="number" id="priceIncrement" placeholder="Price Increment">
+        <input type="number" id="maxPriceRange" placeholder="Max Price Range">
+        <button type="submit">Calculate Option Outcomes</button>
+    </form>
+
+    <!-- Div to display the results -->
+    <div id="calculationResults"></div>
 
     <script src="script.js"></script>
 </body>
