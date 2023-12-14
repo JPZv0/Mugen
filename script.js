@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', handleKeyPress);
 
     // Function for calculating option outcomes
+    //This is shit -- FIX it JP
     function calculateOptionOutcomesForPriceRange(currentStockPrice, strikePrice, optionPremium, theta, daysUntilExpiration, priceIncrement, maxPriceRange) {
         const thetaDecayPerDay = theta / 365;
         let outcomes = [];
@@ -98,6 +99,7 @@ function displayResults(outcomes) {
 }
 
     // Handling form submission
+    
     document.getElementById('optionCalcForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
